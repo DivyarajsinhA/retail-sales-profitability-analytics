@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Retail Sales &amp; Profitability Analytics | Divyarajsinh Thakor</title>
+  <meta name="description" content="Explore the Retail Sales and Profitability Analytics project by Divyarajsinh Thakor, featuring Microsoft Power BI, Excel, Power Query, DAX, Star Schema data modeling, business intelligence, and retail profitability insights." />
+  <link rel="canonical" href="https://retail-sales-analytics-portfolio.vercel.app/" />
+  <meta property="og:title" content="Retail Sales & Profitability Analytics | Divyarajsinh Thakor" />
+  <meta property="og:description" content="End-to-end Business Intelligence portfolio project built with Microsoft Power BI, Microsoft Excel, Power Query (M), DAX, and Star Schema data modeling." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://retail-sales-analytics-portfolio.vercel.app/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Sticky Navigation Bar -->
+  <header class="navbar" id="top">
+    <div class="container nav-inner">
+      <a href="#top" class="brand" aria-label="DT Analytics Home">
+        <span class="brand-mark">DT</span>
+        <span class="brand-divider">|</span>
+        <span class="brand-label">ANALYTICS</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main Navigation">
+        <a href="#overview" class="nav-link">Overview</a>
+        <a href="#project" class="nav-link">Project</a>
+        <a href="#kpis" class="nav-link">KPIs</a>
+        <a href="#dashboard" class="nav-link">Dashboard</a>
+        <a href="#methodology" class="nav-link">Methodology</a>
+        <a href="#insights" class="nav-link">Insights</a>
+        <a href="#technologies" class="nav-link">Technologies</a>
+        <a href="https://github.com/DivyarajsinhA/retail-sales-profitability-analytics" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">VIEW GITHUB</a>
+      </nav>
+
+      <button type="button" class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- 3. HERO SECTION -->
+    <section class="hero" id="overview">
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <p class="eyebrow">DATA ANALYTICS PORTFOLIO | BUSINESS INTELLIGENCE CASE STUDY</p>
+          <h1 class="hero-title">Retail Sales &amp; Profitability Analytics Dashboard</h1>
+          <p class="hero-subtitle">Turning Retail Data into Meaningful Business Insights.</p>
+          <p class="hero-description">
+            An end-to-end retail sales and profitability analytics project developed using Microsoft Power BI, Microsoft Excel, Power Query (M), and DAX. This project analyzes 1,200+ retail transactions across multiple years to evaluate sales performance, profitability, discount impact, product categories, and regional business performance.
+          </p>
+
+          <div class="badge-row" aria-label="Project Technologies">
+            <span class="tech-pill">Microsoft Power BI</span>
+            <span class="tech-pill">Microsoft Excel</span>
+            <span class="tech-pill">Power Query</span>
+            <span class="tech-pill">DAX</span>
+            <span class="tech-pill">Data Analytics</span>
+            <span class="tech-pill">Star Schema</span>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#project" class="btn btn-primary">EXPLORE PROJECT</a>
+            <a href="https://github.com/DivyarajsinhA/retail-sales-profitability-analytics" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.69-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14 0 1.54-.01 2.79-.01 3.17 0 .31.21.68.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+              <span>VIEW GITHUB REPOSITORY</span>
+            </a>
+          </div>
+
+          <div class="status-tag">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span>PORTFOLIO PROJECT | RETAIL BUSINESS INTELLIGENCE</span>
+          </div>
+        </div>
+
+        <aside class="hero-summary-card reveal" aria-label="Executive Snapshot">
+          <div class="summary-card-header">
+            <span class="summary-kicker">VERIFIED DATASET SNAPSHOT</span>
+            <span class="summary-period">Jan 2024 – Oct 2026</span>
+          </div>
+          <div class="summary-metrics">
+            <div class="summary-metric">
+              <span class="sm-label">Total Net Revenue</span>
+              <span class="sm-value">₹3,32,14,180</span>
+            </div>
+            <div class="summary-metric">
+              <span class="sm-label">Total Net Profit</span>
+              <span class="sm-value teal">₹97,15,460</span>
+            </div>
+            <div class="summary-metric">
+              <span class="sm-label">Overall Profit Margin</span>
+              <span class="sm-value">29.3%</span>
+            </div>
+            <div class="summary-metric">
+              <span class="sm-label">YoY Growth (2024–2025)</span>
+              <span class="sm-value teal">+33.8%</span>
+            </div>
+          </div>
+          <div class="summary-footer">
+            <span>Star Schema: <strong>1 Fact + 4 Dimensions</strong></span>
+            <span>Orders: <strong>1,200</strong></span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- 4. PROJECT OVERVIEW -->
+    <section class="section" id="project">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">PROJECT SCOPE &amp; OBJECTIVES</span>
+          <h2>Project Overview</h2>
+          <p class="section-desc">
+            The objective of this project is to analyze retail sales transactions and transform structured business data into meaningful insights that support data-driven decision-making. The project focuses on identifying revenue trends, profitability patterns, discount-related margin erosion, regional performance, and product category contributions.
+          </p>
+        </div>
+
+        <!-- Dataset Information Strip -->
+        <div class="dataset-bar reveal" aria-label="Dataset Information">
+          <div class="ds-item"><span class="ds-k">Total Transactions</span><strong class="ds-v">1,200</strong></div>
+          <div class="ds-item"><span class="ds-k">Customers</span><strong class="ds-v">150</strong></div>
+          <div class="ds-item"><span class="ds-k">Products</span><strong class="ds-v">30</strong></div>
+          <div class="ds-item"><span class="ds-k">Business Regions</span><strong class="ds-v">5</strong></div>
+          <div class="ds-item"><span class="ds-k">Dataset Period</span><strong class="ds-v">Jan 2024 – Oct 2026</strong></div>
+          <div class="ds-item"><span class="ds-k">Data Model</span><strong class="ds-v">Star Schema (1 Fact, 4 Dim)</strong></div>
+        </div>
+
+        <!-- Business Objectives -->
+        <h3 class="subsection-heading reveal">Business Objectives</h3>
+        <div class="objectives-grid">
+          <article class="card reveal">
+            <span class="obj-num">01</span>
+            <h3>Sales Performance Analysis</h3>
+            <p>Analyze total net revenue, sales trends, average order value, and overall business performance.</p>
+          </article>
+          <article class="card reveal">
+            <span class="obj-num">02</span>
+            <h3>Profitability Analysis</h3>
+            <p>Evaluate net profit, profit margins, cost of goods sold, and profitability across different products and categories.</p>
+          </article>
+          <article class="card reveal">
+            <span class="obj-num">03</span>
+            <h3>Discount Impact Analysis</h3>
+            <p>Understand how promotional discounts affect profit margins and identify opportunities to improve profitability.</p>
+          </article>
+          <article class="card reveal">
+            <span class="obj-num">04</span>
+            <h3>Regional Performance Analysis</h3>
+            <p>Compare revenue, orders, and profitability across five business regions.</p>
+          </article>
+          <article class="card reveal">
+            <span class="obj-num">05</span>
+            <h3>Business Intelligence Reporting</h3>
+            <p>Develop structured analytical reporting to support business decisions using KPIs, visualizations, and DAX measures.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. KEY PERFORMANCE INDICATORS -->
+    <section class="section section-tinted" id="kpis">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">KPI REPORTING</span>
+          <h2>Executive Performance Overview</h2>
+          <p class="section-desc">Key financial and operational metrics derived from the retail sales dataset.</p>
+        </div>
+
+        <div class="kpi-grid">
+          <article class="kpi-card reveal">
+            <span class="kpi-label">Total Net Revenue</span>
+            <p class="kpi-value">₹3,32,14,180</p>
+            <p class="kpi-desc">Revenue generated across the analyzed transactions.</p>
+          </article>
+          <article class="kpi-card accent-teal reveal">
+            <span class="kpi-label">Total Net Profit</span>
+            <p class="kpi-value">₹97,15,460</p>
+            <p class="kpi-desc">Net profit after cost of goods sold and promotional discounts.</p>
+          </article>
+          <article class="kpi-card accent-navy reveal">
+            <span class="kpi-label">Overall Profit Margin</span>
+            <p class="kpi-value">29.3%</p>
+            <p class="kpi-desc">Weighted net profit as a percentage of net revenue.</p>
+          </article>
+          <article class="kpi-card accent-blue reveal">
+            <span class="kpi-label">Total Orders</span>
+            <p class="kpi-value">1,200</p>
+            <p class="kpi-desc">Total distinct retail orders.</p>
+          </article>
+        </div>
+
+        <div class="secondary-kpi-strip reveal">
+          <div class="sec-kpi">
+            <span class="sec-kpi-label">Total Units Sold</span>
+            <strong class="sec-kpi-val">3,734</strong>
+          </div>
+          <div class="sec-kpi">
+            <span class="sec-kpi-label">Average Order Value</span>
+            <strong class="sec-kpi-val">₹27,678</strong>
+          </div>
+          <div class="sec-kpi">
+            <span class="sec-kpi-label">Revenue Growth (2024–2025)</span>
+            <strong class="sec-kpi-val positive">+33.8%</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. DATASET AND DATA PREPARATION -->
+    <section class="section" id="methodology">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">ETL &amp; DATA MODELING</span>
+          <h2>Data Preparation &amp; ETL Process</h2>
+          <p class="section-desc">Transforming raw retail transaction data into an organized analytical model.</p>
+        </div>
+
+        <div class="etl-grid">
+          <article class="card etl-card reveal">
+            <span class="step-badge">STEP 01 – DATA COLLECTION</span>
+            <h3>Microsoft Excel Source</h3>
+            <p>The project uses a structured retail sales workbook containing transactional data and supporting dimension tables.</p>
+          </article>
+
+          <article class="card etl-card reveal">
+            <span class="step-badge">STEP 02 – DATA CLEANING</span>
+            <h3>Power Query (M)</h3>
+            <ul class="clean-list">
+              <li>Data type validation</li>
+              <li>Column transformation</li>
+              <li>Null and duplicate handling</li>
+              <li>Text cleaning &amp; data formatting</li>
+              <li>Data quality checks</li>
+            </ul>
+          </article>
+
+          <article class="card etl-card reveal">
+            <span class="step-badge">STEP 03 – DATA TRANSFORMATION</span>
+            <h3>Analytical Field Creation</h3>
+            <ul class="clean-list">
+              <li>Discount Tier</li>
+              <li>Shipping Days</li>
+              <li>Quarter &amp; Year-Month</li>
+              <li>Fiscal Year</li>
+            </ul>
+          </article>
+
+          <article class="card etl-card reveal">
+            <span class="step-badge">STEP 04 – DATA MODELING</span>
+            <h3>Star Schema Architecture</h3>
+            <p>One-to-many (<code>1:*</code>) relationships connecting four dimension tables (<code>Dim_Calendar</code>, <code>Dim_Products</code>, <code>Dim_Customers</code>, <code>Dim_Regions</code>) to central <code>Fact_Sales</code>.</p>
+          </article>
+        </div>
+
+        <!-- Clean Star Schema Architecture Diagram -->
+        <div class="schema-panel reveal" aria-label="Star Schema Architecture Diagram">
+          <div class="schema-header">
+            <h3>Star Schema Architecture</h3>
+            <span class="schema-note">Single-direction 1-to-Many (1 : *) Relationships</span>
+          </div>
+          <div class="schema-grid">
+            <div class="schema-col">
+              <div class="dim-box">
+                <div class="box-head">Dim_Calendar <span class="rel-pill">1</span></div>
+                <p><strong>PK:</strong> Date</p>
+                <p>Year, Quarter, Month, Year-Month, Fiscal Year</p>
+              </div>
+              <div class="dim-box">
+                <div class="box-head">Dim_Products <span class="rel-pill">1</span></div>
+                <p><strong>PK:</strong> Product_ID</p>
+                <p>Product Name, Category, Sub-Category, Unit Cost, Brand</p>
+              </div>
+            </div>
+
+            <div class="fact-box">
+              <div class="fact-tag">CENTRAL FACT TABLE</div>
+              <h4>Fact_Sales</h4>
+              <p class="fact-sub">1,200 Retail Transactions</p>
+              <div class="fact-keys">
+                <span>FK: Order_Date (*)</span>
+                <span>FK: Product_ID (*)</span>
+                <span>FK: Customer_ID (*)</span>
+                <span>FK: Region_ID (*)</span>
+              </div>
+              <p class="fact-measures">Net Revenue &bull; Gross Sales &bull; COGS &bull; Profit &bull; Quantity &bull; Discount % &bull; Shipping Days</p>
+            </div>
+
+            <div class="schema-col">
+              <div class="dim-box">
+                <div class="box-head">Dim_Customers <span class="rel-pill">1</span></div>
+                <p><strong>PK:</strong> Customer_ID</p>
+                <p>Customer Name, Segment, City, State, Loyalty Tier</p>
+              </div>
+              <div class="dim-box">
+                <div class="box-head">Dim_Regions <span class="rel-pill">1</span></div>
+                <p><strong>PK:</strong> Region_ID</p>
+                <p>Region Name, Regional Manager, States, Regional Target</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. DASHBOARD PRESENTATION (HONEST REPORT-PAGE STRUCTURE, NO FAKE SCREENSHOTS) -->
+    <section class="section section-tinted" id="dashboard">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">REPORT ARCHITECTURE</span>
+          <h2>Power BI Dashboard Structure</h2>
+          <p class="section-desc">
+            Three analytical report views designed to provide an organized understanding of retail business performance. Each page card below documents the exact analytical components—and is structured so exported Power BI Desktop screenshots can be added cleanly into <code>assets/screenshots/</code> without redesigning the layout.
+          </p>
+        </div>
+
+        <div class="report-pages-grid">
+          <article class="report-card reveal" data-screenshot-slot="page1">
+            <div class="report-card-top">
+              <span class="page-badge">PAGE 01</span>
+              <span class="slot-status">Report Page Specification</span>
+            </div>
+            <h3>Executive Overview</h3>
+            <p class="report-summary">High-level leadership view combining top-line KPI cards, multi-year revenue &amp; profit trajectories, regional revenue comparison, and omnichannel mix.</p>
+            <ul class="component-list">
+              <li>Total Net Revenue</li>
+              <li>Total Net Profit</li>
+              <li>Profit Margin</li>
+              <li>Total Orders</li>
+              <li>Monthly Revenue and Profit Trends</li>
+              <li>Regional Revenue Comparison</li>
+              <li>Sales Channel Distribution</li>
+            </ul>
+          </article>
+
+          <article class="report-card reveal" data-screenshot-slot="page2">
+            <div class="report-card-top">
+              <span class="page-badge teal">PAGE 02</span>
+              <span class="slot-status">Report Page Specification</span>
+            </div>
+            <h3>Product &amp; Discount Analysis</h3>
+            <p class="report-summary">Deep-dive merchandising and pricing view built to evaluate category profitability, top-performing SKUs, and discount-driven margin erosion.</p>
+            <ul class="component-list">
+              <li>Category Revenue Analysis</li>
+              <li>Product Profitability</li>
+              <li>Discount Tier Analysis</li>
+              <li>Profit Margin Comparison</li>
+              <li>Top 10 Products</li>
+              <li>Discount-Driven Margin Erosion</li>
+            </ul>
+          </article>
+
+          <article class="report-card reveal" data-screenshot-slot="page3">
+            <div class="report-card-top">
+              <span class="page-badge navy">PAGE 03</span>
+              <span class="slot-status">Report Page Specification</span>
+            </div>
+            <h3>Regional &amp; Customer Insights</h3>
+            <p class="report-summary">Market and customer segmentation view tracking regional target attainment, Average Order Value across segments, and payment mode preferences.</p>
+            <ul class="component-list">
+              <li>Regional Sales Performance</li>
+              <li>Regional Target Attainment</li>
+              <li>Customer Segment Analysis</li>
+              <li>Average Order Value</li>
+              <li>Payment Mode Distribution</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. BUSINESS INSIGHTS & VERIFIED DATA CHARTS -->
+    <section class="section" id="insights">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">ANALYTICAL FINDINGS</span>
+          <h2>Key Business Insights &amp; Findings</h2>
+          <p class="section-desc">Analytical observations identified from the retail dataset, paired with actionable business recommendations.</p>
+        </div>
+
+        <div class="insights-grid">
+          <article class="insight-card reveal">
+            <span class="insight-kicker">INSIGHT 01 – DISCOUNT-DRIVEN PROFIT MARGIN EROSION</span>
+            <h3>23.1 pp Margin Drop on 20%+ Discounted Orders</h3>
+            <p>Full-price orders achieved a <strong>36.0% profit margin</strong>, while orders receiving standard discounts of 5%–15% achieved <strong>27.8%</strong>. Orders with discounts of 20% or higher (107 orders) had a significantly lower profit margin of <strong>12.9%</strong>—a <strong>23.1 percentage-point</strong> difference.</p>
+            <div class="rec-box">
+              <strong>Business Recommendation:</strong> Review high-discount promotional strategies, especially in Furniture, to reduce unnecessary profit margin erosion.
+            </div>
+          </article>
+
+          <article class="insight-card reveal">
+            <span class="insight-kicker">INSIGHT 02 – REGIONAL SALES PERFORMANCE</span>
+            <h3>West Leads Revenue; Central Leads Margin</h3>
+            <p>The <strong>West</strong> region generated the highest reported revenue of <strong>₹1.01 crore</strong> across 320 orders, followed by the <strong>South</strong> region with <strong>₹87.9 lakh</strong> across 305 orders. The <strong>Central</strong> region achieved the highest reported regional profit margin of <strong>30.8%</strong>.</p>
+            <div class="rec-box">
+              <strong>Business Recommendation:</strong> Study the sales strategies of high-performing regions and identify opportunities to improve profitability across other regions.
+            </div>
+          </article>
+
+          <article class="insight-card reveal">
+            <span class="insight-kicker">INSIGHT 03 – PRODUCT CATEGORY PROFITABILITY</span>
+            <h3>High-Volume Electronics vs. High-Margin Merch</h3>
+            <p><strong>Electronics</strong> generated the highest reported category revenue of <strong>₹1.40 crore</strong>, with a profit margin of <strong>24.8%</strong>. <strong>Corporate Merch</strong> achieved a profit margin of <strong>42.5%</strong>, and <strong>Office Supplies</strong> achieved <strong>37.6%</strong>.</p>
+            <div class="rec-box">
+              <strong>Business Recommendation:</strong> Monitor product category performance and balance revenue growth with profitability.
+            </div>
+          </article>
+
+          <article class="insight-card reveal">
+            <span class="insight-kicker">INSIGHT 04 – YEAR-OVER-YEAR REVENUE GROWTH</span>
+            <h3>+33.8% Annual Revenue Expansion (2024–2025)</h3>
+            <p>Revenue increased by <strong>33.8%</strong> between 2024 (<strong>₹93.4 lakh</strong>) and 2025 (<strong>₹1.25 crore</strong>). 2026 YTD revenue (January–October) stands at <strong>₹1.14 crore</strong> across 420 orders.</p>
+            <div class="rec-box">
+              <strong>Business Recommendation:</strong> Continue tracking revenue trends and investigate seasonal performance and growth opportunities.
+            </div>
+          </article>
+        </div>
+
+        <!-- Clean Interactive Charts Driven Strictly by Verified Figures Above -->
+        <div class="charts-grid reveal">
+          <div class="chart-card">
+            <div class="chart-head">
+              <h3>Profit Margin by Discount Tier (%)</h3>
+              <span class="chart-sub">Verified Dataset Comparison</span>
+            </div>
+            <div class="chart-wrap">
+              <canvas id="discountChart" aria-label="Bar chart showing profit margin across discount tiers"></canvas>
+            </div>
+          </div>
+
+          <div class="chart-card">
+            <div class="chart-head">
+              <h3>Annual Revenue Trajectory (₹ Lakhs)</h3>
+              <span class="chart-sub">2024 Full Year vs. 2025 Full Year vs. 2026 YTD</span>
+            </div>
+            <div class="chart-wrap">
+              <canvas id="revenueChart" aria-label="Bar chart showing annual revenue growth from 2024 to 2026 YTD"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. DAX AND ANALYTICAL MEASURES -->
+    <section class="section section-tinted" id="dax">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">DATA ANALYSIS EXPRESSIONS</span>
+          <h2>DAX Measures &amp; Business Metrics</h2>
+          <p class="section-desc">
+            Using Data Analysis Expressions to calculate and evaluate business performance. DAX measures are used to calculate business KPIs, evaluate historical performance, compare profitability, and support analytical reporting through Power BI.
+          </p>
+        </div>
+
+        <div class="dax-tabs reveal" role="tablist" aria-label="DAX Measure Categories">
+          <button type="button" class="dax-tab active" data-cat="all" role="tab" aria-selected="true">All Categories</button>
+          <button type="button" class="dax-tab" data-cat="core" role="tab" aria-selected="false">Core KPIs</button>
+          <button type="button" class="dax-tab" data-cat="time" role="tab" aria-selected="false">Time Intelligence</button>
+          <button type="button" class="dax-tab" data-cat="regional" role="tab" aria-selected="false">Regional Analysis</button>
+          <button type="button" class="dax-tab" data-cat="customer" role="tab" aria-selected="false">Customer &amp; Discount</button>
+        </div>
+
+        <div class="dax-groups-grid" id="daxContainer"></div>
+      </div>
+    </section>
+
+    <!-- 10. TECHNOLOGY STACK -->
+    <section class="section" id="technologies">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">TECHNICAL STACK</span>
+          <h2>Tools &amp; Technologies</h2>
+          <p class="section-desc">Core Business Intelligence, data cleaning, and analytical modeling technologies used across the project lifecycle.</p>
+        </div>
+
+        <div class="tech-grid">
+          <article class="card tech-card reveal">
+            <div class="tech-icon blue">PBI</div>
+            <h3>Microsoft Power BI</h3>
+            <p>Used for business intelligence reporting, data visualization, analytical dashboard design, and KPI presentation.</p>
+          </article>
+          <article class="card tech-card reveal">
+            <div class="tech-icon teal">XLS</div>
+            <h3>Microsoft Excel</h3>
+            <p>Used for structured data storage, spreadsheet analysis, and validation of calculated results.</p>
+          </article>
+          <article class="card tech-card reveal">
+            <div class="tech-icon navy">PQ</div>
+            <h3>Power Query (M)</h3>
+            <p>Used for data cleaning, transformation, data type management, and ETL operations.</p>
+          </article>
+          <article class="card tech-card reveal">
+            <div class="tech-icon blue">DAX</div>
+            <h3>DAX</h3>
+            <p>Used for calculated measures, business metrics, time intelligence, profitability analysis, and regional performance calculations.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. PROJECT FILES AND REPOSITORY -->
+    <section class="section section-tinted" id="resources">
+      <div class="container">
+        <div class="resources-box reveal">
+          <div class="resources-info">
+            <span class="section-label">REPOSITORY &amp; DOCUMENTATION</span>
+            <h2>Project Resources</h2>
+            <p class="section-desc">Explore the source files, dataset, DAX measures, data transformation scripts, and Power BI project resources directly in the GitHub repository.</p>
+            <ul class="resource-list">
+              <li><code>Retail Sales Analytics Dataset.xlsx</code> <span>Structured Star Schema Excel workbook</span></li>
+              <li><code>dax_measures.dax</code> <span>Organized DAX measures &amp; KPI formulas</span></li>
+              <li><code>power_query_transformations.m</code> <span>Power Query (M) cleaning &amp; ETL scripts</span></li>
+              <li><code>powerbi_theme.json</code> <span>Custom Power BI report visual theme</span></li>
+              <li><code>README.md</code> <span>Project README documentation &amp; build guide</span></li>
+            </ul>
+            <a href="https://github.com/DivyarajsinhA/retail-sales-profitability-analytics" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              <span>EXPLORE COMPLETE GITHUB PROJECT</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. ABOUT THE PROJECT AUTHOR -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="about-card reveal">
+          <div class="about-main">
+            <span class="section-label">ABOUT THE DEVELOPER</span>
+            <h2>Divyarajsinh Thakor</h2>
+            <p class="about-role">Aspiring Data Analyst | Business Intelligence Enthusiast</p>
+            <p class="about-bio">
+              I am a B.Tech Information Technology student at Parul University with an interest in Data Analytics, Business Intelligence, database management, and data-driven decision-making. I enjoy working with structured datasets, analyzing business performance, creating dashboards, and transforming raw information into meaningful insights. My objective is to apply my technical and analytical skills to solve real-world business problems and grow as a Data Analyst.
+            </p>
+          </div>
+          <div class="about-skills">
+            <h3>Core Areas of Interest</h3>
+            <div class="interest-tags">
+              <span>Data Analytics</span>
+              <span>Business Intelligence</span>
+              <span>Microsoft Power BI</span>
+              <span>SQL</span>
+              <span>Microsoft Excel</span>
+              <span>Python</span>
+              <span>Data Visualization</span>
+              <span>Business Reporting</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13. FINAL CALL TO ACTION -->
+    <section class="section cta-section">
+      <div class="container">
+        <div class="cta-banner reveal">
+          <h2>Let's Turn Data Into Better Decisions.</h2>
+          <p>Explore my project and discover how data analytics, visualization, and business intelligence can support better business decisions.</p>
+          <div class="cta-actions">
+            <a href="https://github.com/DivyarajsinhA/retail-sales-profitability-analytics" target="_blank" rel="noopener noreferrer" class="btn btn-light">EXPLORE GITHUB PROJECT</a>
+            <a href="#top" class="btn btn-ghost-light">BACK TO TOP &uarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 14. FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <p class="footer-name">Divyarajsinh Thakor</p>
+        <p class="footer-sub">Data Analytics Portfolio &bull; Retail Sales &amp; Profitability Analytics Dashboard</p>
+        <p class="footer-tech">Technologies: Power BI | Excel | Power Query | DAX</p>
+      </div>
+      <div class="footer-right">
+        <a href="https://github.com/DivyarajsinhA/retail-sales-profitability-analytics" target="_blank" rel="noopener noreferrer" class="github-icon-link" aria-label="GitHub Repository">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.69-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14 0 1.54-.01 2.79-.01 3.17 0 .31.21.68.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+          <span>GitHub</span>
+        </a>
+        <p class="footer-copy">Copyright &copy; 2026 Divyarajsinh Thakor. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast" role="status" aria-live="polite">Copied to clipboard</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
