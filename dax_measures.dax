@@ -1,0 +1,145 @@
+// ============================================================================
+// RETAIL SALES ANALYTICS — POWER BI DAX MEASURES LIBRARY
+// Author: Divyarajsinh Thakor
+// Data Model: Star Schema (Fact_Sales + Dim_Calendar, Dim_Products, Dim_Customers, Dim_Regions)
+// How to use: In Power BI Desktop, create a dedicated Measure Table named '_Measures'
+//             (Home -> Enter Data -> Name: _Measures -> Load), then add each measure below.
+// ============================================================================
+
+// ----------------------------------------------------------------------------
+// 1. CORE REVENUE, PROFIT & ORDER KPIs
+// ----------------------------------------------------------------------------
+
+Total Net Revenue =
+SUM( Fact_Sales[Net_Revenue] )
+
+Total Gross Sales =
+SUM( Fact_Sales[Gross_Sales] )
+
+Total COGS =
+SUM( Fact_Sales[COGS] )
+
+Total Net Profit =
+SUM( Fact_Sales[Profit] )
+
+Profit Margin % =
+DIVIDE( [Total Net Profit], [Total Net Revenue], 0 )
+
+Total Orders =
+DISTINCTCOUNT( Fact_Sales[Order_ID] )
+
+Total Units Sold =
+SUM( Fact_Sales[Quantity] )
+
+Average Order Value (AOV) =
+DIVIDE( [Total Net Revenue], [Total Orders], 0 )
+
+Average Discount % =
+AVERAGE( Fact_Sales[Discount_Pct] )
+
+Total Discount Given =
+[Total Gross Sales] - [Total Net Revenue]
+
+Avg Shipping Days =
+AVERAGE( Fact_Sales[Shipping_Days] )
+
+// ----------------------------------------------------------------------------
+// 2. TIME INTELLIGENCE (Requires Dim_Calendar marked as Date Table)
+// ----------------------------------------------------------------------------
+
+Revenue YTD =
+TOTALYTD( [Total Net Revenue], Dim_Calendar[Date] )
+
+Revenue PY (Prior Year) =
+CALCULATE(
+    [Total Net Revenue],
+    SAMEPERIODLASTYEAR( Dim_Calendar[Date] )
+)
+
+Revenue YoY Variance =
+[Total Net Revenue] - [Revenue PY (Prior Year)]
+
+Revenue YoY Growth % =
+DIVIDE( [Revenue YoY Variance], [Revenue PY (Prior Year)], 0 )
+
+Profit PY (Prior Year) =
+CALCULATE(
+    [Total Net Profit],
+    SAMEPERIODLASTYEAR( Dim_Calendar[Date] )
+)
+
+Profit YoY Growth % =
+DIVIDE( [Total Net Profit] - [Profit PY (Prior Year)], [Profit PY (Prior Year)], 0 )
+
+Revenue MoM Growth % =
+VAR PrevMonthRev =
+    CALCULATE( [Total Net Revenue], DATEADD( Dim_Calendar[Date], -1, MONTH ) )
+RETURN
+    DIVIDE( [Total Net Revenue] - PrevMonthRev, PrevMonthRev, 0 )
+
+Running Total Revenue =
+CALCULATE(
+    [Total Net Revenue],
+    FILTER(
+        ALLSELECTED( Dim_Calendar[Date] ),
+        Dim_Calendar[Date] <= MAX( Dim_Calendar[Date] )
+    )
+)
+
+// ----------------------------------------------------------------------------
+// 3. TARGET ATTAINMENT & REGIONAL RANKING
+// ----------------------------------------------------------------------------
+
+Regional Target =
+SUM( Dim_Regions[Target_3Yr_Revenue] )
+
+Target Attainment % =
+DIVIDE( [Total Net Revenue], [Regional Target], 0 )
+
+Target Variance =
+[Total Net Revenue] - [Regional Target]
+
+Region Revenue Rank =
+RANKX( ALL( Dim_Regions[Region_Name] ), [Total Net Revenue], , DESC, DENSE )
+
+// ----------------------------------------------------------------------------
+// 4. CUSTOMER & DISCOUNT EROSION ANALYTICS
+// ----------------------------------------------------------------------------
+
+Active Customers =
+DISTINCTCOUNT( Fact_Sales[Customer_ID] )
+
+Repeat Customers =
+COUNTROWS(
+    FILTER(
+        VALUES( Fact_Sales[Customer_ID] ),
+        CALCULATE( [Total Orders] ) >= 2
+    )
+)
+
+Repeat Customer Rate % =
+DIVIDE( [Repeat Customers], [Active Customers], 0 )
+
+High Discount Orders (20%+) =
+CALCULATE( [Total Orders], Fact_Sales[Discount_Pct] >= 0.20 )
+
+High Discount Margin % =
+CALCULATE( [Profit Margin %], Fact_Sales[Discount_Pct] >= 0.20 )
+
+Full Price Margin % =
+CALCULATE( [Profit Margin %], Fact_Sales[Discount_Pct] = 0 )
+
+Margin Erosion (pp) =
+[Full Price Margin %] - [High Discount Margin %]
+
+// ----------------------------------------------------------------------------
+// 5. DYNAMIC UX & EXECUTIVE TITLE MEASURE
+// ----------------------------------------------------------------------------
+
+Dynamic Report Subtitle =
+VAR SelYear =
+    IF( ISFILTERED( Dim_Calendar[Year] ), SELECTEDVALUE( Dim_Calendar[Year], "Multiple Years" ), "All Years (2024-2026)" )
+VAR SelRegion =
+    IF( ISFILTERED( Dim_Regions[Region_Name] ), SELECTEDVALUE( Dim_Regions[Region_Name], "Multiple Regions" ), "All Regions" )
+RETURN
+    "Showing: " & SelYear & "  |  Region: " & SelRegion & "  |  Orders: " & FORMAT( [Total Orders], "#,##0" )
